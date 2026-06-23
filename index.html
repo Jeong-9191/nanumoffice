@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나눔오피스 쇼핑몰 새 단장 제안 — 비엠기획</title>
+<meta name="description" content="자료를 지키고, 영업은 이어갑니다 — 안전한 4단계 이전 제안">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f172a; --body:#3a4a55; --muted:#677581; --line:#dde5e2;
+    --paper:#fff; --bg:#eef3f1; --soft:#f4f8f6;
+    --green:#0E7A43; --green-d:#0a5e34; --green-soft:#E7F3EC; --green-line:#cfe6d7;
+    --teal:#0D5B54; --band:#0E2A26; --gold:#b8872f;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--body);
+    font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{ max-width:1320px; margin:0 auto; padding:0 clamp(18px,4vw,56px);}
+  svg{ display:block;}
+
+  /* Topbar */
+  .topbar{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92);
+    backdrop-filter:blur(14px); border-bottom:1px solid rgba(15,23,42,.08);}
+  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:20px; height:64px;}
+  .brand{ display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:-.02em; color:var(--ink);}
+  .brand-mark{ width:32px; height:32px; border-radius:8px; flex:none;
+    background:linear-gradient(135deg,var(--teal),var(--green)); color:#fff;
+    display:inline-flex; align-items:center; justify-content:center; font-weight:900; font-size:15px;}
+  .topnav{ display:flex; gap:22px; font-size:14px; font-weight:700; color:#516170;}
+  .topnav a:hover{ color:var(--green-d);}
+  .cta{ display:inline-flex; align-items:center; gap:7px; background:var(--green); color:#fff;
+    padding:10px 16px; border-radius:9px; font-weight:800; font-size:14px; white-space:nowrap;}
+  .cta:hover{ background:var(--green-d);}
+
+  /* Hero */
+  .hero{ padding:clamp(34px,5vw,60px) 0 clamp(28px,4vw,44px);}
+  .hero-grid{ display:grid; grid-template-columns:minmax(280px,.82fr) minmax(0,1.5fr); gap:clamp(26px,4vw,52px); align-items:start;}
+  .eyebrow{ color:var(--teal); font-weight:800; font-size:13.5px; letter-spacing:.02em; margin:0 0 14px;}
+  h1{ margin:0; color:var(--ink); font-weight:900; font-size:clamp(34px,4.6vw,58px); line-height:1.12; letter-spacing:-.045em;}
+  .lead{ margin:18px 0 26px; color:var(--body); font-size:clamp(15.5px,1.4vw,18px);}
+  .trust{ list-style:none; padding:0; margin:0 0 22px; display:grid; gap:14px;}
+  .trust li{ display:grid; grid-template-columns:40px 1fr; gap:13px; align-items:start;}
+  .trust .ti{ width:40px; height:40px; border-radius:10px; background:var(--green-soft); color:var(--green-d);
+    display:inline-flex; align-items:center; justify-content:center; flex:none;}
+  .trust b{ display:block; color:var(--ink); font-weight:800; font-size:15.5px;}
+  .trust span{ color:var(--muted); font-size:13.5px; line-height:1.55;}
+  .pill{ display:inline-flex; align-items:center; gap:9px; background:var(--green-soft); color:var(--green-d);
+    border:1px solid var(--green-line); border-radius:999px; padding:11px 18px; font-weight:800; font-size:14.5px;}
+
+  /* Timeline */
+  .timeline{ position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  .timeline::before{ content:""; position:absolute; left:8%; right:8%; top:21px; height:2px;
+    background:linear-gradient(90deg,var(--green-line),var(--green),var(--green-line)); z-index:0;}
+  .step{ position:relative; z-index:1; background:var(--paper); border:1px solid var(--line); border-radius:12px;
+    padding:42px 16px 16px; box-shadow:0 10px 30px rgba(16,40,30,.06);}
+  .step-no{ position:absolute; top:-0px; left:50%; transform:translate(-50%,-50%);
+    width:42px; height:42px; border-radius:50%; background:var(--green); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:900; font-size:16px; border:4px solid var(--bg);}
+  .step-ico{ color:var(--teal); margin-bottom:8px;}
+  .step h3{ margin:0 0 4px; font-size:16px; color:var(--ink); font-weight:800; letter-spacing:-.02em;}
+  .step .sub{ margin:0 0 12px; color:var(--muted); font-size:13px;}
+  .work{ background:var(--green-soft); border:1px solid var(--green-line); border-radius:9px; padding:12px 13px;}
+  .work .wl{ font-size:11.5px; font-weight:800; color:var(--green-d); letter-spacing:.04em; margin:0 0 7px;}
+  .work ul{ margin:0; padding:0; list-style:none; display:grid; gap:5px;}
+  .work li{ position:relative; padding-left:13px; font-size:12.5px; color:#3f5560; line-height:1.45;}
+  .work li::before{ content:""; position:absolute; left:0; top:7px; width:5px; height:5px; border-radius:50%; background:var(--green);}
+  .addr{ display:flex; align-items:center; gap:7px; margin-top:10px; font-size:11.5px; color:var(--muted);}
+  .addr .a{ background:#fff; border:1px solid var(--line); border-radius:6px; padding:4px 8px; font-weight:700; color:#475467;}
+  .addr svg{ color:var(--green);}
+
+  /* Generic section */
+  .section{ padding:clamp(34px,4.5vw,58px) 0;}
+  .section-band{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .sec-head{ margin:0 0 22px;}
+  .sec-head .k{ color:var(--teal); font-weight:800; font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; margin:0 0 8px;}
+  .sec-head h2{ margin:0; color:var(--ink); font-weight:900; font-size:clamp(23px,2.6vw,32px); letter-spacing:-.035em;}
+  .sec-head p{ margin:10px 0 0; color:var(--muted); font-size:15px; max-width:680px;}
+
+  /* Principles */
+  .principles{ display:grid; grid-template-columns:1.15fr 1fr 1fr; gap:14px;}
+  .prin{ border-radius:14px; padding:24px 24px; border:1px solid var(--line); background:var(--paper);}
+  .prin .pn{ font-weight:900; font-size:13px; color:var(--green-d); letter-spacing:.05em; margin:0 0 14px; display:inline-flex; gap:9px; align-items:center;}
+  .prin .pn svg{ color:var(--green);}
+  .prin h3{ margin:0 0 8px; font-size:18px; color:var(--ink); font-weight:800; letter-spacing:-.02em;}
+  .prin p{ margin:0; color:var(--muted); font-size:13.5px;}
+  .prin.dark{ background:var(--band); border-color:var(--band); color:#cfe7dd;}
+  .prin.dark .pn{ color:#7fd4a3;} .prin.dark .pn svg{ color:#7fd4a3;}
+  .prin.dark h3{ color:#fff;} .prin.dark p{ color:#a9c9bd;}
+
+  /* Benefits */
+  .benefits{ display:grid; grid-template-columns:repeat(2,1fr); gap:13px;}
+  .benefit{ display:grid; grid-template-columns:34px 1fr; gap:13px; align-items:start;
+    background:var(--paper); border:1px solid var(--line); border-radius:11px; padding:18px 20px;}
+  .benefit .bi{ width:34px; height:34px; border-radius:9px; background:var(--green-soft); color:var(--green-d);
+    display:inline-flex; align-items:center; justify-content:center; flex:none;}
+  .benefit p{ margin:0; font-size:14.5px; color:var(--ink);}
+  .benefit p b{ color:var(--green-d);}
+
+  /* Cost table */
+  .cost{ background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  .cost-row{ display:grid; grid-template-columns:minmax(180px,.6fr) 1fr; gap:8px; padding:16px 22px; border-bottom:1px solid var(--line);}
+  .cost-row:last-child{ border-bottom:none;}
+  .cost-row .ck{ font-weight:800; color:var(--ink); font-size:14.5px;}
+  .cost-row .cv{ color:var(--body); font-size:14.5px;}
+  .cost-row .cv b{ color:var(--green-d);}
+  .blank{ display:inline-block; min-width:120px; border-bottom:1.5px dashed var(--green-line); color:var(--muted);}
+
+  /* Requests */
+  .reqs{ list-style:none; padding:0; margin:0; display:grid; gap:11px;}
+  .reqs li{ display:grid; grid-template-columns:30px 1fr; gap:12px; align-items:center;
+    background:var(--paper); border:1px solid var(--line); border-radius:11px; padding:16px 20px; font-size:15px; color:var(--ink);}
+  .reqs .rn{ width:30px; height:30px; border-radius:50%; background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px;}
+  .reqs b{ color:var(--green-d);}
+
+  /* Closing */
+  .closing{ background:var(--band); color:#dbeee4;}
+  .closing .wrap{ padding-top:clamp(36px,4.5vw,56px); padding-bottom:clamp(36px,4.5vw,56px);}
+  .closing h2{ margin:0 0 12px; color:#fff; font-weight:900; font-size:clamp(20px,2.2vw,27px); letter-spacing:-.03em;}
+  .closing p{ margin:0 0 26px; color:#a9c9bd; font-size:15.5px; max-width:640px;}
+  .sign{ display:flex; justify-content:space-between; align-items:flex-end; gap:18px; flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,.14); padding-top:22px;}
+  .sign .from{ font-size:19px; font-weight:800; color:#fff;}
+  .sign .meta{ font-size:13px; color:#8fb3a6; text-align:right; line-height:1.7;}
+  .sign .meta b{ color:#cfe7dd; font-weight:600;}
+
+  .reveal{ opacity:0; transform:translateY(12px); animation:rise .6s ease forwards;}
+  @keyframes rise{ to{opacity:1; transform:none;} }
+  a:focus-visible,.cta:focus-visible{ outline:2px solid var(--green); outline-offset:3px;}
+
+  @media (max-width:1024px){
+    .hero-grid{ grid-template-columns:1fr;}
+    .timeline{ grid-template-columns:repeat(2,1fr);}
+    .timeline::before{ display:none;}
+    .principles{ grid-template-columns:1fr;}
+  }
+  @media (max-width:680px){
+    .topnav{ display:none;}
+    .timeline{ grid-template-columns:1fr;}
+    .benefits{ grid-template-columns:1fr;}
+    .cost-row{ grid-template-columns:1fr;}
+    h1{ font-size:32px;}
+  }
+  @media (prefers-reduced-motion:reduce){ .reveal{ animation:none; opacity:1; transform:none;} html{scroll-behavior:auto;} }
+  @media print{
+    body{ background:#fff;}
+    .topbar{ position:static;} .reveal{ animation:none; opacity:1; transform:none;}
+    .step,.prin,.benefit,.cost,.reqs li{ box-shadow:none; break-inside:avoid;}
+    .section,.hero{ break-inside:avoid;}
+    .closing{ -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body id="top">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="brand-mark">N</span><span>비엠기획 제안</span></a>
+    <nav class="topnav" aria-label="섹션 이동">
+      <a href="#flow">진행 단계</a>
+      <a href="#principles">핵심 원칙</a>
+      <a href="#benefits">무엇이 좋아지나</a>
+      <a href="#cost">비용</a>
+      <a href="#requests">협조</a>
+    </nav>
+    <a class="cta" href="#flow">진행 순서 확인
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <p class="eyebrow">나눔오피스 통합·이전 프로젝트</p>
+        <h1>자료를 지키고,<br>영업은 이어갑니다</h1>
+        <p class="lead">백업 → 제작 → 이전 → 오픈까지 안전한 4단계로, 데이터 손실 없이 비즈니스 연속성을 보장합니다.</p>
+        <ul class="trust">
+          <li>
+            <span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <span><b>데이터 안전 최우선</b>다중 백업과 검증으로 소중한 자료를 안전하게 보호합니다.</span>
+          </li>
+          <li>
+            <span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span>
+            <span><b>영업 연속성 보장</b>서비스 중단 없이 단계별로 전환하여 안정적인 운영을 유지합니다.</span>
+          </li>
+          <li>
+            <span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>
+            <span><b>투명한 진행 관리</b>단계별 체크포인트와 결과 기록으로 모든 과정을 투명하게 관리합니다.</span>
+          </li>
+        </ul>
+        <span class="pill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>데이터를 잃지 않습니다. 비즈니스를 멈추지 않습니다.</span>
+      </div>
+
+      <!-- 4-step timeline -->
+      <div class="timeline reveal" id="flow">
+        <div class="step">
+          <span class="step-no">1</span>
+          <span class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>
+          <h3>자료 백업</h3>
+          <p class="sub">모든 자료를 안전하게 백업</p>
+          <div class="work">
+            <p class="wl">주요 작업</p>
+            <ul><li>DB 전체 백업</li><li>파일 및 이미지 백업</li><li>설정 및 주문내역 백업</li><li>백업 검증 및 보관</li></ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="step-no">2</span>
+          <span class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+          <h3>새 쇼핑몰 제작</h3>
+          <p class="sub">새 환경에서 쇼핑몰 구축</p>
+          <div class="work">
+            <p class="wl">주요 작업</p>
+            <ul><li>디자인 / 기능 개발</li><li>상품·카테고리 셋팅</li><li>주문·결제 테스트</li><li>운영자 교육 및 점검</li></ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="step-no">3</span>
+          <span class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></span>
+          <h3>최종 이전</h3>
+          <p class="sub">도메인 전환 및 데이터 이전</p>
+          <div class="work">
+            <p class="wl">주요 작업</p>
+            <ul><li>도메인 전환 직전 최종 증분 백업</li><li>실제 데이터 이전</li><li>DNS 전환</li><li>정상 동작 확인</li></ul>
+            <div class="addr"><span class="a">nanum.ink</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="a">www.nanum.ink</span></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="step-no">4</span>
+          <span class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>
+          <h3>오픈</h3>
+          <p class="sub">새 쇼핑몰 오픈 및 안정화</p>
+          <div class="work">
+            <p class="wl">주요 작업</p>
+            <ul><li>서비스 오픈</li><li>모니터링 및 안정화</li><li>문제 발생 시 즉시 대응</li><li>이전 서버 안전 보관</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="section section-band" id="principles">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="k">Safe Migration</p>
+        <h2>안전을 위한 3가지 핵심 원칙</h2>
+        <p>이전 프로젝트의 성공은 순서를 지키는 데서 시작됩니다. 아래 원칙을 반드시 준수하여 안전하게 진행하겠습니다.</p>
+      </div>
+      <div class="principles reveal">
+        <div class="prin dark">
+          <p class="pn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>01</p>
+          <h3>백업 완료 전 해지 금지</h3>
+          <p>모든 자료 백업과 검증이 완료되기 전까지 기존 사이트는 절대 해지하지 않습니다.</p>
+        </div>
+        <div class="prin">
+          <p class="pn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>02</p>
+          <h3>최종 증분 백업</h3>
+          <p>도메인 전환 직전에 주문 · 회원 · 재고 등 변경분에 대한 최종 증분 백업을 수행합니다.</p>
+        </div>
+        <div class="prin">
+          <p class="pn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg>03</p>
+          <h3>301 리디렉션</h3>
+          <p>오픈 후 기존 주소는 301 리디렉션으로 연결하여 고객과 검색 노출을 지킵니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS (추가) -->
+  <section class="section" id="benefits">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="k">Why</p>
+        <h2>무엇이 좋아지나</h2>
+        <p>빌려 쓰는 쇼핑몰에서 우리만의 쇼핑몰로 옮기면, 이렇게 달라집니다.</p>
+      </div>
+      <div class="benefits reveal">
+        <div class="benefit"><span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span><p>상품과 옵션을 <b>원하는 대로 자유롭게 등록</b> (대표님이 가장 원하시던 부분)</p></div>
+        <div class="benefit"><span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.4 12.5a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L22 7H6"/></svg></span><p>장바구니·온라인 결제 등 <b>제대로 된 쇼핑 기능</b></p></div>
+        <div class="benefit"><span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></span><p>보기 좋고 쓰기 편한 화면, 특히 <b>휴대폰</b></p></div>
+        <div class="benefit"><span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span><p>나중에 <b>네이버·카카오 등으로 판매를 넓힐 발판</b></p></div>
+        <div class="benefit" style="grid-column:1 / -1;"><span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg></span><p>‘빌린 것’이 아니라 <b>‘우리 것’</b> — 키운 만큼 우리에게 쌓입니다</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST (추가) -->
+  <section class="section section-band" id="cost">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="k">Cost</p>
+        <h2>비용</h2>
+        <p>매달 나가는 비용과 일회성 비용을 나누어 정리했습니다.</p>
+      </div>
+      <div class="cost reveal">
+        <div class="cost-row"><span class="ck">새 쇼핑몰 운영 공간</span><span class="cv">전문 업체에서 임대, <b>월 10만원 수준</b></span></div>
+        <div class="cost-row"><span class="ck">기존 임대 쇼핑몰 이용료</span><span class="cv">전환 완료 후 <b>더 이상 내지 않음</b></span></div>
+        <div class="cost-row"><span class="ck">카드·결제 수수료</span><span class="cv">매출에 따라 결제회사에 내는 비용(지금과 같은 성격), 별도</span></div>
+        <div class="cost-row"><span class="ck">제작·운영</span><span class="cv"><b>비엠기획이 담당</b> — 제작비 <span class="blank">&nbsp;</span> · 일정 <span class="blank">&nbsp;</span> (협의 후 확정)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUESTS (추가) -->
+  <section class="section" id="requests">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="k">Next</p>
+        <h2>대표님께 부탁드릴 것</h2>
+        <p>아래 세 가지만 준비해 주시면 바로 1단계(자료 안전 보관)를 시작할 수 있습니다.</p>
+      </div>
+      <ul class="reqs reveal">
+        <li><span class="rn">1</span><span>현재 쇼핑몰의 <b>관리자 접속 권한</b> 공유</span></li>
+        <li><span class="rn">2</span><span>인터넷 주소(nanum.ink) <b>계정 정보</b> 확인</span></li>
+        <li><span class="rn">3</span><span>운영 방식(렌탈 상담형 · 온라인 판매 · 무통장 입금 · 세금계산서 발행) <b>최종 확인</b></span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<!-- CLOSING -->
+<footer class="closing">
+  <div class="wrap">
+    <h2>준비되면, 가장 먼저 자료를 안전하게 보관하는 일부터 시작하겠습니다.</h2>
+    <p>이후 단계마다 진행 상황을 쉽게 정리해 보고드리겠습니다. 감사합니다.</p>
+    <div class="sign">
+      <div class="from">비엠기획 정한영 대표 드림</div>
+      <div class="meta">받는 분 · <b>나눔오피스 대표님</b><br>드리는 곳 · <b>비엠기획</b> &nbsp;|&nbsp; 작성일 · <b>2026년 6월 23일</b></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
