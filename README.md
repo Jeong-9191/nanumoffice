@@ -3,7 +3,9 @@
 비엠기획이 나눔오피스 대표님께 드리는 제안서 웹페이지입니다.
 (자료를 지키고 영업은 이어가는 안전한 4단계 이전 계획 · 비용 · 협조 요청)
 
-**제안서 보기 → https://jeong-9191.github.io/nanumoffice-proposal/**
+**제안서 보기 → https://jeong-9191.github.io/nanumoffice/**
+
+> 검색엔진에는 노출되지 않도록 설정되어 있습니다(noindex). 링크를 아는 분만 열람할 수 있습니다.
 
 ---
 
